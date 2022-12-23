@@ -40,8 +40,6 @@ declare module '$env/static/private' {
 	export const CUDA_PATH_V11_2: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const FPS_BROWSER_APP_PROFILE_STRING: string;
-	export const FPS_BROWSER_USER_PROFILE_STRING: string;
 	export const GPU_FORCE_64BIT_PTR: string;
 	export const GPU_MAX_ALLOC_PERCENT: string;
 	export const GPU_MAX_HEAP_SIZE: string;
@@ -158,8 +156,6 @@ declare module '$env/dynamic/private' {
 		CUDA_PATH_V11_2: string;
 		DriverData: string;
 		EDITOR: string;
-		FPS_BROWSER_APP_PROFILE_STRING: string;
-		FPS_BROWSER_USER_PROFILE_STRING: string;
 		GPU_FORCE_64BIT_PTR: string;
 		GPU_MAX_ALLOC_PERCENT: string;
 		GPU_MAX_HEAP_SIZE: string;
