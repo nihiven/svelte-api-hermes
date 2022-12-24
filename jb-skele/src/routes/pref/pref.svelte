@@ -15,14 +15,13 @@
 	});
 </script>
 
-<div>
-	<h1>App List</h1>
+<h1>Preferences</h1>
+
+<section>
 	{#each apps as app (app.id)}
-		<ul>
-			<li>{app.id} - {app.name}</li>
-		</ul>
+		<h3 class="text-3xl font-bold underline">{app.name}</h3>
 	{:else}
 		<!-- this block renders when users.length === 0 -->
-		<p>loading...</p>
+		<p>loading....</p>
 	{/each}
-</div>
+</section>
