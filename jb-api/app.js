@@ -80,10 +80,36 @@ function appGet(req, res) {
   }
 }
 
+function prefGet(req, res) {
+  // BUG: doesn't work when stub is empty
+  try {
+    const { app_id } = req.params.app_id;
+
+    sql = `SELECT * FROM preferences`;
+    if (app_id) sql += ` WHERE app_id = ?`;
+
+    console.log(sql);
+
+    db.all(sql, [app_id], (err, rows) => {
+      if (err) {
+        console.log(sql);
+        return res.json({ status: 300, success: false, error: err });
+      }
+      if (rows.length === 0) return res.json({ status: 300, success: false, error: 'No data found' });
+      res.json(rows);
+    });
+  } catch (err) {
+    return res.json({ status: 400, success: false, error: err });
+  }
+}
+
 app.post('/jeb', jebPost);
 app.get('/jeb', jebGet);
 
 app.post('/app', appPost);
 app.get('/app', appGet);
+
+app.get('/pref/:app_id', prefGet);
+app.get('/pref', prefGet);
 
 app.listen(3000);

@@ -1,11 +1,8 @@
 <script>
 	import '../app.css';
+	import Nav from './nav.svelte';
 </script>
 
-<p class="p-3">
-	<a class="hover:underline" href="/admin">Admin</a> -
-	<a class="hover:underline" href="/pref">Preferences</a>
-</p>
-<hr />
+<Nav />
 
 <slot />

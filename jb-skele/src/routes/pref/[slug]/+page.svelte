@@ -1,6 +1,4 @@
 <script>
-	import Pref from './pref.svelte';
-
 	/** @type {import('./$types').PageData} */
 	export let data;
 </script>
@@ -10,5 +8,3 @@
 </svelte:head>
 
 {data.post.title}
-
-<Pref />
