@@ -80,17 +80,29 @@ function appGet(req, res) {
   }
 }
 
-function prefGet(req, res) {
-  // BUG: doesn't work when params.app_id is empty
+function prefGetByAppId(req, res) {
   try {
-    const { app_id } = req.params.app_id;
-
-    sql = `SELECT * FROM preferences`;
-    if (app_id) sql += ` WHERE app_id = ?`;
-
-    console.log(sql);
+    const app_id = req.params.app_id;
+    sql = `SELECT * FROM preferences WHERE app_id = ?`;
 
     db.all(sql, [app_id], (err, rows) => {
+      if (err) {
+        console.log(sql);
+        return res.json({ status: 300, success: false, error: err });
+      }
+      if (rows.length === 0) return res.json({ status: 300, success: false, error: 'No data found' });
+      res.json(rows);
+    });
+  } catch (err) {
+    return res.json({ status: 400, success: false, error: err });
+  }
+}
+
+function prefGetAll(req, res) {
+  try {
+    sql = `SELECT * FROM preferences`;
+
+    db.all(sql, (err, rows) => {
       if (err) {
         console.log(sql);
         return res.json({ status: 300, success: false, error: err });
@@ -109,7 +121,7 @@ app.get('/jeb', jebGet);
 app.post('/app', appPost);
 app.get('/app', appGet);
 
-app.get('/pref/:app_id', prefGet);
-app.get('/pref', prefGet);
+app.get('/pref/:app_id', prefGetByAppId);
+app.get('/pref', prefGetAll);
 
 app.listen(3000);
