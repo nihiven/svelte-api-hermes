@@ -81,7 +81,7 @@ function appGet(req, res) {
 }
 
 function prefGet(req, res) {
-  // BUG: doesn't work when stub is empty
+  // BUG: doesn't work when params.app_id is empty
   try {
     const { app_id } = req.params.app_id;
 
