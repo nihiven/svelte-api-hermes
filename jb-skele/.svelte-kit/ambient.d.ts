@@ -187,7 +187,6 @@ declare module '$env/static/private' {
 	export const VK_SDK_PATH: string;
 	export const VULKAN_SDK: string;
 	export const windir: string;
-	export const __COMPAT_LAYER: string;
 }
 
 /**
@@ -378,7 +377,6 @@ declare module '$env/dynamic/private' {
 		VK_SDK_PATH: string;
 		VULKAN_SDK: string;
 		windir: string;
-		__COMPAT_LAYER: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: string]: string | undefined;
 	}
