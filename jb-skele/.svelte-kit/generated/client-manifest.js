@@ -13,7 +13,7 @@ export const dictionary = {
 	"/": [2],
 	"/admin": [3],
 	"/pref": [4],
-	"/pref/[slug]": [5]
+	"/pref/[slug]": [~5]
 };
 
 export const hooks = {

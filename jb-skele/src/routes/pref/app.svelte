@@ -21,7 +21,6 @@
 	onMount(async () => {
 		const res = await fetch(`http://localhost:3000/pref/${app_id}`);
 		prefs = await res.json();
-		console.log(prefs);
 	});
 </script>
 

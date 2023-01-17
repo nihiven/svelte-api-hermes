@@ -9,6 +9,4 @@
 	<title>User Preferences</title>
 </svelte:head>
 
-{data.post.title}
-
 <Pref />

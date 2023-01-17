@@ -199,7 +199,7 @@ declare module '$env/static/private' {
  * ```
  */
 declare module '$env/static/public' {
-
+	export const PUBLIC_API_KEY: string;
 }
 
 /**
@@ -394,6 +394,7 @@ declare module '$env/dynamic/private' {
  */
 declare module '$env/dynamic/public' {
 	export const env: {
+		PUBLIC_API_KEY: string;
 		[key: `PUBLIC_${string}`]: string | undefined;
 	}
 }

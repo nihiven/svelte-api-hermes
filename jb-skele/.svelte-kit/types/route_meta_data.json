@@ -5,6 +5,6 @@
 		"src/routes/pref/+page.ts"
 	],
 	"/pref/[slug]": [
-		"src/routes/pref/[slug]/+page.ts"
+		"src/routes/pref/[slug]/+page.server.ts"
 	]
 }

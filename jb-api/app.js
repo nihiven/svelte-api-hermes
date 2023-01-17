@@ -87,7 +87,6 @@ function prefGetByAppId(req, res) {
 
     db.all(sql, [app_id], (err, rows) => {
       if (err) {
-        console.log(sql);
         return res.json({ status: 300, success: false, error: err });
       }
       if (rows.length === 0) return res.json({ status: 300, success: false, error: 'No data found' });
@@ -104,7 +103,6 @@ function prefGetAll(req, res) {
 
     db.all(sql, (err, rows) => {
       if (err) {
-        console.log(sql);
         return res.json({ status: 300, success: false, error: err });
       }
       if (rows.length === 0) return res.json({ status: 300, success: false, error: 'No data found' });
